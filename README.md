@@ -5,9 +5,8 @@ This repository provides search experience with your images by [Azure Computer V
 
 - [Python environment](https://www.python.org/)
 - [Azure subscription](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts#azure-terminology)
-    - Especially, [Computer vision](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?tabs=vision%2Cwindows#create-a-new-azure-cognitive-services-resource)
-- Your image files with `jpg`, `jpeg` or `png` format
-    - Refer to [detailed requirements for images](https://docs.microsoft.com/ja-jp/azure/cognitive-services/computer-vision/quickstarts-sdk/image-analysis-client-library?tabs=visual-studio&pivots=programming-language-python)
+    - [Computer vision](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?tabs=vision%2Cwindows#create-a-new-azure-cognitive-services-resource) resource
+- Your image files with `jpg`, `jpeg` or `png` format[^1]
 
 # How to build an app
 
@@ -29,7 +28,7 @@ This repository provides search experience with your images by [Azure Computer V
     streamlit run ./st_app.py
     ```
 
-    You will find the following message. Then, copy and pate the URL in your browser:
+    You will find the following message. Then, copy and pate the URL in your browser[^2]:
 
     ```
     You can now view your Streamlit app in your browser.
@@ -37,7 +36,7 @@ This repository provides search experience with your images by [Azure Computer V
     Network URL: http://xxx.xxx.xxx.xxx:8501
     ```
 
-    Go to [streamlit doc](https://docs.streamlit.io/library/get-started) for more reference. Once you successfully run your app, you will see:
+    Once you successfully run your app, you will see:
 
     ![top page](/docs/images/top_page.png)
 
@@ -49,11 +48,9 @@ This repository provides search experience with your images by [Azure Computer V
 
     ![browse image](/docs/images/browse_image.png)
 
-    Once you select your image, you will find the analyzed result:
+    Once you select your image, you will find the analyzed result[^3]:
 
     ![analyzed image](/docs/images/analized_results.png)
-
-    As we see, the presented tags are in Japanese. If you want to change the displayed language, change `language` in `common/config.ini` as `en`, for example. Go [here](/common/REAME.md), if you need more detail.
 
 2. **Search image**
 
@@ -100,3 +97,8 @@ This repository provides search experience with your images by [Azure Computer V
     - [How to build stream app](https://docs.streamlit.io/library/api-reference)
 
 
+[^1]: Refer to [detailed requirements for images](https://docs.microsoft.com/ja-jp/azure/cognitive-services/computer-vision/quickstarts-sdk/image-analysis-client-library?tabs=visual-studio&pivots=programming-language-python)
+
+[^2]: Go to [streamlit doc](https://docs.streamlit.io/library/get-started) for more reference. 
+
+[^3]: As we see, the presented tags are in Japanese. If you want to change the displayed language, change `language` in `common/config.ini` as `en`, for example. Go [here](/common/REAME.md), if you need more detail.
