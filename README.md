@@ -1,23 +1,22 @@
 # Overview
-
-This repository provides search experience with your images by [Azure Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/). Using [stramlit](https://streamlit.io/) framework, we can easily build an app, and customize with your preferences.
+This repository provides search experience with your images by [Azure Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/). Using [stramlit](https://streamlit.io/) framework, we can easily build an app, and customize it with your preferences.
 
 # Prerequisites
 
 - [Python environment](https://www.python.org/)
 - [Azure subscription](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts#azure-terminology)
+    - Especially, [Computer vision](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?tabs=vision%2Cwindows#create-a-new-azure-cognitive-services-resource)
 - Your image files with `jpg`, `jpeg` or `png` format
+    - Refer to [detailed requirements for images](https://docs.microsoft.com/ja-jp/azure/cognitive-services/computer-vision/quickstarts-sdk/image-analysis-client-library?tabs=visual-studio&pivots=programming-language-python)
 
 # How to build an app
 
 1. Install necessary libraries in python:
-
     ```sh
     pip install -r ./requirement.txt
     ```
 
-2. Configure the environment in `common/config.ini`:
-
+2. Configure the environment in `common/config.ini`. See [this page](/common/REAME.md) in detail.
     ```sh
     [Azure]
     subscription_key = 12345xxxyyy
@@ -25,19 +24,12 @@ This repository provides search experience with your images by [Azure Computer V
     language = ja
     ```
 
-    | variables        | description                                                            |
-    | ---------------- | ---------------------------------------------------------------------- |
-    | subscription_key | Azure subscription                                                     |
-    | cv_endpoint      | Rest Endpoint URL provided by Azure Computer Vision                    |
-    | language         | Used for the language specifying the language in Azure Computer Vision |
-
-
 3. Run streamlit app with your terminal:
     ```sh
     streamlit run ./st_app.py
     ```
 
-    You will find the following message, and please copy and pate the URL in your browser:
+    You will find the following message. Then, copy and pate the URL in your browser:
 
     ```
     You can now view your Streamlit app in your browser.
@@ -45,14 +37,15 @@ This repository provides search experience with your images by [Azure Computer V
     Network URL: http://xxx.xxx.xxx.xxx:8501
     ```
 
-    For more reference about streamlit, please go to [streamlit doc](https://docs.streamlit.io/library/get-started). You can see the following page, if you successfully run your app:
+    Go to [streamlit doc](https://docs.streamlit.io/library/get-started) for more reference. Once you successfully run your app, you will see:
 
     ![top page](/docs/images/top_page.png)
 
 # How to use the app
 
-1. Register image
-    In order to register your image, please select your image in your local folder
+1. **Register image**
+
+    In registering your image, select your image in your local folder
 
     ![browse image](/docs/images/browse_image.png)
 
@@ -60,15 +53,16 @@ This repository provides search experience with your images by [Azure Computer V
 
     ![analyzed image](/docs/images/analized_results.png)
 
-    As we see, the presented tags are in Japanese. If you change the language, please change `language` in `common/config.ini` as `en`, for example.
+    As we see, the presented tags are in Japanese. If you want to change the displayed language, change `language` in `common/config.ini` as `en`, for example. Go [here](/common/REAME.md), if you need more detail.
 
-2. Search image
+2. **Search image**
+
     If you input your interest by word, your will find the search results:
-
     ![Search result](/docs/images/search_results.png)
 
-3. Customize your preferences
-    If you want to more results, please change the prarmeters:
+3. **Customize your preferences**
+
+    If you want to more results, change the prarmeters:
 
     - topN: `5` tags are shown in each picture
     ![topN](/docs/images/topN.png)
@@ -76,25 +70,33 @@ This repository provides search experience with your images by [Azure Computer V
     - Search result: `4` search results are shown
     ![Search results](/docs/images/search_results_number.png)
 
-4. Further usage
-    If you want to generate search index with only your images, follow the instructions:
+4. **Further usage**
+
+    If you want to generate search index with your images, follow the instructions:
     - Delete `df_tag_db.pkl` file, and all images from `upload_images` directories.
     - Follow the instruction `1. Register image`.
+
 
 # Directory structure
 
 ```
 ├─common
-│  └─config.ini         : configuration like Azure subscription, etc
+│  ├─config.ini         : Configuration file. Generate it by yourself
 │  └─generate_tag_db.py : Main functions
-├─docs                  : It defines this repository
+├─docs                  : Defines this repository
 ├─upload_images         : Store uploaded images
-│  └─images
-├─ df_tag_db.pkl        : It defines search index as pandas DataFrame
+│  └─images             : Your images
+├─ df_tag_db.pkl        : Defines search index as pandas DataFrame
 ├─ st_app.py            : App in streamlit
 └─ REAME.md             : Instruction of the repository
 ```
 
 # References
-- [Call the Image Analysis API in Azure Computer Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/how-to/call-analyze-image?tabs=python)
-- [How to build stream app](https://docs.streamlit.io/library/api-reference)
+- Azure Computer Vision
+    - [Quick Start: Image analysis with Computer Vision](https://docs.microsoft.com/ja-jp/azure/cognitive-services/computer-vision/quickstarts-sdk/image-analysis-client-library?tabs=visual-studio&pivots=programming-language-python)
+    - [Call the Image Analysis API in Azure Computer Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/how-to/call-analyze-image?tabs=python)
+    - [computer_vision_samples in github](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/blob/master/samples/vision/computer_vision_samples.py)
+- Streamlit
+    - [How to build stream app](https://docs.streamlit.io/library/api-reference)
+
+
