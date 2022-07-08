@@ -1,13 +1,12 @@
 # Overview
 
-This repository provides search experience with your images by [Azure Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/).
-
-With [stramlit](https://streamlit.io/) framework, we can easily build an app, and customize with your preferences.
+This repository provides search experience with your images by [Azure Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/). Using [stramlit](https://streamlit.io/) framework, we can easily build an app, and customize with your preferences.
 
 # Prerequisites
 
 - [Python environment](https://www.python.org/)
 - [Azure subscription](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts#azure-terminology)
+- Your image files with `jpg`, `jpeg` or `png` format
 
 # How to build an app
 
@@ -26,15 +25,14 @@ With [stramlit](https://streamlit.io/) framework, we can easily build an app, an
     language = ja
     ```
 
-    | variables        | description                                                             |
-    | ---------------- | ----------------------------------------------------------------------- |
-    | subscription_key | Azure subscription                                                      |
-    | cv_endpoint      | Rest Endpoint URL provided by Azure Computer Vision                     |
-    | language         | Used for the language specifying the language in Azure Computer Vision. |
+    | variables        | description                                                            |
+    | ---------------- | ---------------------------------------------------------------------- |
+    | subscription_key | Azure subscription                                                     |
+    | cv_endpoint      | Rest Endpoint URL provided by Azure Computer Vision                    |
+    | language         | Used for the language specifying the language in Azure Computer Vision |
 
 
 3. Run streamlit app with your terminal:
-
     ```sh
     streamlit run ./st_app.py
     ```
@@ -47,16 +45,13 @@ With [stramlit](https://streamlit.io/) framework, we can easily build an app, an
     Network URL: http://xxx.xxx.xxx.xxx:8501
     ```
 
-    For more reference about streamlit, please go to [streamlit doc](https://docs.streamlit.io/library/get-started).
-
-    You can see the following page, if you successfully run your app:
+    For more reference about streamlit, please go to [streamlit doc](https://docs.streamlit.io/library/get-started). You can see the following page, if you successfully run your app:
 
     ![top page](/docs/images/top_page.png)
 
 # How to use the app
 
 1. Register image
-
     In order to register your image, please select your image in your local folder
 
     ![browse image](/docs/images/browse_image.png)
@@ -68,13 +63,11 @@ With [stramlit](https://streamlit.io/) framework, we can easily build an app, an
     As we see, the presented tags are in Japanese. If you change the language, please change `language` in `common/config.ini` as `en`, for example.
 
 2. Search image
-
     If you input your interest by word, your will find the search results:
 
     ![Search result](/docs/images/search_results.png)
 
 3. Customize your preferences
-
     If you want to more results, please change the prarmeters:
 
     - topN: `5` tags are shown in each picture
@@ -83,6 +76,10 @@ With [stramlit](https://streamlit.io/) framework, we can easily build an app, an
     - Search result: `4` search results are shown
     ![Search results](/docs/images/search_results_number.png)
 
+4. Further usage
+    If you want to generate search index with only your images, follow the instructions:
+    - Delete `df_tag_db.pkl` file, and all images from `upload_images` directories.
+    - Follow the instruction `1. Register image`.
 
 # Directory structure
 
