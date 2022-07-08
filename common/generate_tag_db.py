@@ -115,7 +115,7 @@ class generate_tag_db():
             df_tag_db = df_tag_db_tmp
         df_tag_db = df_tag_db.reset_index(drop=True)
         df_tag_db.to_pickle(self.tag_db_file)
-        return df_tag_db
+        return df_tag_db_tmp
 
     def extract_records_from_db_with_word(self
                                         ,word) -> list:
