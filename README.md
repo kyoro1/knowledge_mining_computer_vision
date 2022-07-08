@@ -1,5 +1,3 @@
-# knowledge_mining_computer_vision
-
 # Overview
 
 This repository provides search experience with your images by [Azure Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/).
@@ -95,8 +93,9 @@ With [stramlit](https://streamlit.io/) framework, we can easily build an app, an
 ├─docs                  : It defines this repository
 ├─upload_images         : Store uploaded images
 │  └─images
-├─ st_app.py             : App in streamlit
-└─ REAME.md              : Instruction of the repository
+├─ df_tag_db.pkl        : It defines search index as pandas DataFrame
+├─ st_app.py            : App in streamlit
+└─ REAME.md             : Instruction of the repository
 ```
 
 # References
