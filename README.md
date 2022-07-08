@@ -10,12 +10,16 @@ This repository provides search experience with your images by [Azure Computer V
 
 # How to build an app
 
-1. Install necessary libraries in python:
+## 1. Install necessary libraries
+
+- Please execute the following in your terminal:
     ```sh
     pip install -r ./requirement.txt
     ```
 
-2. Configure the environment in `common/config.ini`. See [this page](/common/REAME.md) in detail.
+## 2. Configure the environment
+
+- By using `common/config.ini`, you can specify the setting. See [this page](/common/REAME.md) in detail.
     ```sh
     [Azure]
     subscription_key = 12345xxxyyy
@@ -23,12 +27,14 @@ This repository provides search experience with your images by [Azure Computer V
     language = ja
     ```
 
-3. Run streamlit app with your terminal:
+## 3. Run streamlit app with your terminal:
+
+- Run the app
     ```sh
     streamlit run ./st_app.py
     ```
 
-    You will find the following message. Then, copy and pate the URL in your browser[^2]:
+- You will find the following message. Then, copy and pate the URL in your browser[^2]:
 
     ```
     You can now view your Streamlit app in your browser.
@@ -36,40 +42,36 @@ This repository provides search experience with your images by [Azure Computer V
     Network URL: http://xxx.xxx.xxx.xxx:8501
     ```
 
-    Once you successfully run your app, you will see:
-
+- Once you successfully run your app, you will see:
     ![top page](/docs/images/top_page.png)
 
 # How to use the app
 
-1. **Register image**
+## 1. Register image
 
-    In registering your image, select your image in your local folder
-
+- In registering your image, select your image in your local folder
     ![browse image](/docs/images/browse_image.png)
 
-    Once you select your image, you will find the analyzed result[^3]:
-
+- Once you select your image, you will find the analyzed result[^3]:
     ![analyzed image](/docs/images/analized_results.png)
 
-2. **Search image**
+## 2. Search image
 
-    If you input your interest by word, your will find the search results:
+- If you input your interest by word, your will find the search results:
     ![Search result](/docs/images/search_results.png)
 
-3. **Customize your preferences**
+## 3. Customize your preferences
+If you want to more results, change the prarmeters:
 
-    If you want to more results, change the prarmeters:
-
-    - topN: `5` tags are shown in each picture
+- topN: `5` tags are shown in each picture
     ![topN](/docs/images/topN.png)
 
-    - Search result: `4` search results are shown
+- Search result: `4` search results are shown
     ![Search results](/docs/images/search_results_number.png)
 
-4. **Further usage**
+## 4. Further usage
 
-    If you want to generate search index with your images, follow the instructions:
+- If you want to generate search index with your images, follow the instructions:
     - Delete `df_tag_db.pkl` file, and all images from `upload_images` directories.
     - Follow the instruction `1. Register image`.
 
