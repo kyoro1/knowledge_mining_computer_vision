@@ -87,7 +87,7 @@ If you want to more results, change the prarmeters:
 │  └─images             : Your images
 ├─ df_tag_db.pkl        : Defines search index as pandas DataFrame
 ├─ st_app.py            : App in streamlit
-└─ REAME.md             : Instruction of the repository
+└─ README.md            : Instruction of the repository
 ```
 
 # References
