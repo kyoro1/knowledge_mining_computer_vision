@@ -1,5 +1,5 @@
 # Overview
-This repository provides search experience with your images by [Azure Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/). Using [stramlit](https://streamlit.io/) framework, we can easily build an app, and customize it with your preferences.
+This repository provides search experience with your images by [Azure Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/). Using [streamlit](https://streamlit.io/) framework, we can easily build an app, and customize it with your preferences.
 
 # Prerequisites
 
@@ -14,7 +14,7 @@ This repository provides search experience with your images by [Azure Computer V
 
 - Please execute the following in your terminal:
     ```sh
-    pip install -r ./requirement.txt
+    pip install -r ./requirements.txt
     ```
 
 ## 2. Configure the environment
