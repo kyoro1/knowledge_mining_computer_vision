@@ -19,7 +19,7 @@ This repository provides search experience with your images by [Azure Computer V
 
 ## 2. Configure the environment
 
-- By using `common/config.ini`, you can specify the setting. See [this page](/common/REAME.md) in detail.
+- By using `common/config.ini`, you can specify the setting. See [this page](/common/README.md) in detail.
     ```sh
     [Azure]
     subscription_key = 12345xxxyyy
