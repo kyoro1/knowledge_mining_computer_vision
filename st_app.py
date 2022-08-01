@@ -12,9 +12,8 @@ subscription_key = config_ini['Azure']['subscription_key']
 ### Azure Computer Vision
 cv_endpoint = config_ini['Azure']['cv_endpoint']
 language = config_ini['Azure']['language']
-#features = ['objects', 'tags']
 features = ['tags']
-SSL_check = False
+SSL_check = True
 
 ### tag db, upload directory
 tag_db_file = 'df_tag_db.pkl'

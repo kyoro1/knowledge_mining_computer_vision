@@ -74,6 +74,7 @@ If you want to more results, change the prarmeters:
 - If you want to generate search index with your images, follow the instructions:
     - Delete `df_tag_db.pkl` file, and all images from `upload_images` directories.
     - Follow the instruction `1. Register image`.
+- IF you ignore SSL check in consuming Azure CV, set `SSL_check` variable as `False` in `st_app.py`. It's not recommended, but please change it under your environment.
 
 
 # Directory structure
