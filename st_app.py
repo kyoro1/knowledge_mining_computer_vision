@@ -12,7 +12,9 @@ subscription_key = config_ini['Azure']['subscription_key']
 ### Azure Computer Vision
 cv_endpoint = config_ini['Azure']['cv_endpoint']
 language = config_ini['Azure']['language']
-features = ['objects', 'tags']
+#features = ['objects', 'tags']
+features = ['tags']
+SSL_check = False
 
 ### tag db, upload directory
 tag_db_file = 'df_tag_db.pkl'
@@ -26,7 +28,8 @@ gt = generate_tag_db(subscription_key=subscription_key
                     ,features=features
                     ,tag_db_file=tag_db_file
                     ,tag_db_columns=tag_db_columns
-                    ,upload_dir=upload_dir)
+                    ,upload_dir=upload_dir
+                    ,SSL_check=SSL_check)
 
 with st.sidebar:
     word = st.text_input('Search words', 'type your words')
